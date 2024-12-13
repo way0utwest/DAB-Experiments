@@ -2,7 +2,7 @@
   "$schema": "https://github.com/Azure/data-api-builder/releases/download/v1.2.14/dab.draft.schema.json",
   "data-source": {
     "database-type": "mssql",
-    "connection-string": "Server=localhost,1433;User ID=STWebApp;Password=Demo12#4;Database=SimpleTalk;TrustServerCertificate=True;Encrypt=True;",
+    "connection-string": "Server=localhost\\SQL2022;User Id=dabuser;Password=Demo12#4;Database=FWState_1_Dev;TrustServerCertificate=True;Encrypt=True;",
     "options": {
       "set-session-context": false
     }
@@ -27,49 +27,19 @@
         "provider": "StaticWebApps"
       },
       "mode": "development"
-    },
-    "pagination": {
-      "default-page-size": 5,
-      "max-page-size": 100000
     }
   },
   "entities": {
-    "Country": {
+    "orderdetails": {
       "source": {
-        "object": "dbo.CountryCodes",
+        "object": "dbo.tbl_OrderDetails",
         "type": "table"
       },
       "graphql": {
         "enabled": true,
         "type": {
-          "singular": "Country",
-          "plural": "Countries"
-        }
-      },
-      "rest": {
-        "enabled": true
-      },
-      "permissions": [
-        {
-          "role": "anonymous",
-          "actions": [
-            {
-              "action": "*"
-            }
-          ]
-        }
-      ]
-    },
-    "todo": {
-      "source": {
-        "object": "dbo.todo",
-        "type": "table"
-      },
-      "graphql": {
-        "enabled": true,
-        "type": {
-          "singular": "todo",
-          "plural": "todos"
+          "singular": "orderdetails",
+          "plural": "orderdetails"
         }
       },
       "rest": {
