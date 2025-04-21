@@ -8,11 +8,6 @@
     }
   },
   "runtime": {
-    "rest": {
-      "enabled": true,
-      "path": "/api",
-      "request-body-strict": true
-    },
     "graphql": {
       "enabled": true,
       "path": "/graphql",
@@ -47,7 +42,7 @@
         }
       },
       "rest": {
-        "enabled": true
+        "enabled": false
       },
       "permissions": [
         {
@@ -73,7 +68,7 @@
         }
       },
       "rest": {
-        "enabled": true
+        "enabled": false
       },
       "permissions": [
         {
@@ -85,6 +80,43 @@
           ]
         }
       ]
+    },
+    "RSSFeeds": {
+      "source": {
+        "object": "dbo.RSSFeeds",
+        "type": "table",
+        "key-fields": [
+          "RSSFeedID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "RSSFeeds",
+          "plural": "RSSFeeds"
+        }
+      },
+      "rest": {
+        "enabled": true,
+        "path": "/RSSFeeds"
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
+        }
+      ],
+      "mappings": {
+        "Checked": "Checked",
+        "FeedBurner": "FeedBurner",
+        "FeedName": "FeedName",
+        "ModifiedDate": "ModifiedDate",
+        "RSSFeedID": "RSSFeedID"
+      }
     }
   }
 }
