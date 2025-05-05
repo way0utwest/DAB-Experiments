@@ -17,12 +17,20 @@ demo04.cmd - adds the customer table to the config
 
 demo05.cmd - starts the API
 
-http://localhost:5000/api/Customers - this is the URL to test the API. This will return a list of customers in JSON format.
+URLs to check
+- http://localhost:5000/api/customer
+- http://localhost:5000/api/customers
+- http://localhost:5000/api/Customers - this is the URL to test the API. This will return a list of customers in JSON format.
+- http://localhost:5000/api/Customers/CustomerID/ANTON - gets one customer
+- http://localhost:5000/graphql - this is the URL to test the GraphQL API. This will return a list of customers in JSON format.
 
-http://localhost:5000/api/Customers/CustomerID/ANTON - gets one customer
+### Postman
+This is a great tool to query the REST and graphql APIs. Use Postman in the Getting Started folder. 
 
-http://localhost:5000/graphql - this is the URL to test the GraphQL API. This will return a list of customers in JSON format.
+Use MyWorkspace for these requests
+- http://localhost:5000/api/Customers
+- http://localhost:5000/api/Customers/CustomerID/ANTON
+- 
 
-Postman - query the REST and graphql APIs. 
 
 demo06.cmd - adds a few more entities to the config file. This will add the Orders and OrderDetails tables to the API.
