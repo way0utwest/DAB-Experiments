@@ -24,13 +24,4 @@ URLs to check
 - http://localhost:5000/api/Customers/CustomerID/ANTON - gets one customer
 - http://localhost:5000/graphql - this is the URL to test the GraphQL API. This will return a list of customers in JSON format.
 
-### Postman
-This is a great tool to query the REST and graphql APIs. Use Postman in the Getting Started folder. 
-
-Use MyWorkspace for these requests
-- http://localhost:5000/api/Customers
-- http://localhost:5000/api/Customers/CustomerID/ANTON
-- 
-
-
-demo06.cmd - adds a few more entities to the config file. This will add the Orders and OrderDetails tables to the API.
+demo06.cmd adds a few more entities to the config file. This will add the Orders, OrderDetails, and Shippers tables to the API.

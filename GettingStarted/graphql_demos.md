@@ -95,3 +95,148 @@ query Customers {
     }
 }
 ```
+
+## Relationships
+
+Let's add a relationship of one to many. In this case we can add a relationship between customers and orders. This will allow us to get all orders for a customer.
+
+```
+dab update Customers --config dab-northwind.json --relationship Orders --target.entity Orders --cardinality many  --relationship.fields "CustomerID:CustomerID"
+```
+
+Query:
+```graphql
+query Customers {
+    customers(filter: { CustomerID: { eq: "VINET" } }) {
+        endCursor
+        hasNextPage
+        items {
+            CustomerID
+            CompanyName
+            Orders {
+                items {
+                    OrderID
+                    OrderDate
+                }
+            }
+        }
+    }
+}
+```
+
+A many to one is possible as well. Let's add a relationship between orders and customers. This will allow us to get the customer for an order.
+
+```
+dab update Orders --config dab-northwind.json --relationship Customers --target.entity Customers --cardinality one  --relationship.fields "CustomerID:CustomerID"
+```
+
+The query is:
+```graphql
+query Orders {
+    orders(filter: { OrderID: { eq: 10248 } }) {
+        items {
+            Customers {
+                CompanyName
+                ContactName
+            }
+            OrderDate
+            CustomerID
+            OrderID
+        }
+    }
+}
+
+
+## Views
+LEt's add a view
+
+```sql
+CREATE VIEW [dbo].[SummaryofSales] AS
+SELECT Orders.ShippedDate, Orders.OrderID, "Order Subtotals".Subtotal
+FROM Orders INNER JOIN "Order Subtotals" ON Orders.OrderID = "Order Subtotals".OrderID
+WHERE Orders.ShippedDate IS NOT NULL
+--ORDER BY Orders.ShippedDate
+GO
+```
+
+Now run demo07.cmd to add the view to the dab-northwind.json file. This will add the view to the dab-northwind.json file and create a GraphQL endpoint for it.
+
+```
+query SalesSummaries {
+    salesSummaries {
+        items {
+            ShippedDate
+            OrderID
+            Subtotal
+        }
+    }
+}
+```
+
+
+## Changing Data
+Add a new shipper. Everything in GraphQL is a GET. To make changes, we use what's called mutations.
+
+Add a new shipper
+```
+query SalesSummaries {
+    salesSummaries {
+        items {
+            ShippedDate
+            OrderID
+            Subtotal
+        }
+    }
+}
+```
+
+Let's change data. We can alter the contact name
+```graphql
+mutation UpdateCustomers {
+    updateCustomers(CustomerID: "ANATR", item: { 
+        ContactName: "Prince"
+        }) 
+        {
+        CustomerID
+        CompanyName
+        ContactName
+        ContactTitle
+        Address
+        City
+        Region
+        PostalCode
+        Country
+        Phone
+        Fax
+    }
+}
+```
+
+We can change two things. Note I return less
+```
+mutation UpdateCustomers {
+    updateCustomers(
+        CustomerID: "ANATR"
+        item: { ContactName: "John Mayer", ContactTitle: "Lead Guitar", City: "LA" }
+    ) {
+        CustomerID
+        CompanyName
+        ContactName
+        ContactTitle
+        Address
+        City
+        Region
+    }
+}
+```
+
+Now delete a shipper.
+```graphql
+mutation DeleteShippers {
+    deleteShippers(ShipperID: 6) {
+        ShipperID
+        CompanyName
+        Phone
+    }
+}
+```
