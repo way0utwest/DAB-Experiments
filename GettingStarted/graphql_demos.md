@@ -145,6 +145,7 @@ query Orders {
         }
     }
 }
+```
 
 
 ## Views
@@ -179,15 +180,17 @@ Add a new shipper. Everything in GraphQL is a GET. To make changes, we use what'
 
 Add a new shipper
 ```
-query SalesSummaries {
-    salesSummaries {
-        items {
-            ShippedDate
-            OrderID
-            Subtotal
-        }
+mutation CreateShippers {
+    createShippers(item: {
+        CompanyName: "Redgate Software"
+        Phone: "04412345"
+    }) {
+        ShipperID
+        CompanyName
+        Phone
     }
 }
+
 ```
 
 Let's change data. We can alter the contact name
@@ -240,3 +243,4 @@ mutation DeleteShippers {
     }
 }
 ```
+
