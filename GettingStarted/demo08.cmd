@@ -1,1 +1,1 @@
-dab add CustOrderHist --source dbo.CustOrderHist --source.type "stored-procedure" --source.params "CustomerID:s" --permissions "anonymous:execute" --rest.methods "get" --graphql.operation "query"
+dab add SalesSummary --config dab-northwind.json --source dbo.SummaryofSales --source.type View --source.key-fields "OrderID" --permissions "anonymous:read"

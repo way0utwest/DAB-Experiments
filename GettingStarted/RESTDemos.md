@@ -50,7 +50,4 @@ SELECT TOP 20 * FROM dbo.Orders AS o
  ORDER BY o.OrderID
  ```
 
-I can add data as well
 
-
-dab add CustOrderHist --source dbo.CustOrderHist --source.type "stored-procedure" --source.params "CustomerID" --permissions "anonymous:execute" --rest.methods "get" --graphql.operation "query"
