@@ -23,7 +23,7 @@ URLs to check
 - http://localhost:5000/api/customer - broken
 - http://localhost:5000/api/customers - broken
 - http://localhost:5000/api/Customers - this is the URL to test the API. This will return a list of customers in JSON format.
-- http://localhost:5000/api/Customers/CustomerID/ANTON - gets one customer
+- http://localhost:5000/api/Customers/  CustomerID/ANTON - gets one customer
 - http://localhost:5000/graphql - this is the URL to test the GraphQL API. This will return a list of customers in JSON format.
 
 ### Postman

@@ -162,7 +162,7 @@ GO
 
 
 Now run demo08.cmd to add the view to the dab-northwind.json file. This will add the view to the dab-northwind.json file and create a GraphQL endpoint for it.
-dab add SalesSummaries --source dbo.SummaryofSales --source.type "view" --source.key-fields "OrderID" --permissions "anonymous:execute" --rest.methods "get" --graphql.operation "query"
+dab add SalesSummaries --config dab-northwind.json --source dbo.SummaryofSales --source.type "view" --source.key-fields "OrderID" --permissions "anonymous:*"
 
 ```
 query SalesSummaries {
