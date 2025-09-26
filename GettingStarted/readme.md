@@ -20,10 +20,10 @@ demo05.cmd - starts the API
 URLs to check
 - http://localhost:5000/ - returns dab version
 - http://localhost:5000/api/ - broken
-- http://localhost:5000/api/customer - broken
+- http://localhost:50   00/api/customer - broken
 - http://localhost:5000/api/customers - broken
 - http://localhost:5000/api/Customers - this is the URL to test the API. This will return a list of customers in JSON format.
-- http://localhost:5000/api/Customers/  CustomerID/ANTON - gets one customer
+- http://localhost:5000/api/Customers/CustomerID/ANTON - gets one customer
 - http://localhost:5000/graphql - this is the URL to test the GraphQL API. This will return a list of customers in JSON format.
 
 ### Postman
@@ -44,4 +44,3 @@ Run this command
 dab add Invoices -c "dab-northwind.json" --source dbo.Invoices --source.type View --source.key-fields "CustomerID" --permissions "anonymous:read"
 
 
-### Stored Procedures

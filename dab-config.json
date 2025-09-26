@@ -2,7 +2,7 @@
   "$schema": "https://github.com/Azure/data-api-builder/releases/download/v1.4.27/dab.draft.schema.json",
   "data-source": {
     "database-type": "mssql",
-    "connection-string": "@env('MSSQL_CONNECTION_STRING')",
+    "connection-string": "Server=localhost,1433;IUid=JoeDev;Pwd=Demo12#4;Database=Northwind;TrustServerCertificate=True;Encrypt=True;",
     "options": {
       "set-session-context": false
     }
@@ -26,14 +26,17 @@
       "authentication": {
         "provider": "StaticWebApps"
       },
-      "mode": "development"
+      "mode": "production"
     }
   },
   "entities": {
     "Customer": {
       "source": {
-        "object": "dbo.customers",
-        "type": "table"
+        "object": "dbo.Customers",
+        "type": "table",
+        "key-fields": [
+          "CustomerID"
+        ]
       },
       "graphql": {
         "enabled": true,

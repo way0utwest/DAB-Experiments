@@ -130,10 +130,11 @@ A many to one is possible as well. Let's add a relationship between orders and c
 dab update Orders --config dab-northwind.json --relationship Customers --target.entity Customers --cardinality one  --relationship.fields "CustomerID:CustomerID"
 ```
 
+
 The query is:
 ```graphql
 query Orders {
-    orders(filter: { OrderID: { eq: 10248 } }) {
+    orders(filter: { OrderID: { eq: 10249 } }) {
         items {
             Customers {
                 CompanyName

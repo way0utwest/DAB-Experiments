@@ -29,6 +29,21 @@ http://localhost:5000/api/Orders?$filter=OrderDate ge 1998-01-01T00:00:00Z
 REST
 I can use this URL to change data. I will use the PATCH type of upate the ship name in an order
 
+Add new Shipper
+URL: http://localhost:5000/api/Shippers
+Body:
+{
+    CompanyName: "Redgate Software"
+}
+
+URL: http://localhost:5000/api/Shippers
+Body:
+{
+    CompanyName: "Redgate Software",
+    Phone: "303-333-3333"
+}
+
+
 URL: http://localhost:5000/api/Orders/OrderID/10248
 Body: 
 ```
