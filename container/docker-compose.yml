@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  data-api-builder:
+    image: mcr.microsoft.com/azure-databases/data-api-builder:latest
+    container_name: dab-service
+    ports:
+      - "5000:5000"
+    volumes:
+      # Maps the local directory containing dab-config.json to the container's config folder
+      - ./DAB-Config:/App/configs
+    env_file:
+      - ./DAB-Config/.env
+    restart: always
