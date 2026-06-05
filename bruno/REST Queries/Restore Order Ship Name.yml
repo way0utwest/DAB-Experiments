@@ -1,0 +1,21 @@
+info:
+  name: Restore Order Ship Name
+  type: http
+  seq: 15
+
+http:
+  method: PATCH
+  url: http://localhost:5000/api/Orders/OrderID/10248
+  auth: inherit
+  body:
+    mode: json
+    json: |-
+      {
+        "ShipName": "Vins et alcools Chevalier"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

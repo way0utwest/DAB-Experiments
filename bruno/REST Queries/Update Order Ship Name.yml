@@ -1,0 +1,21 @@
+info:
+  name: Update Order Ship Name
+  type: http
+  seq: 14
+
+http:
+  method: PATCH
+  url: http://localhost:5000/api/Orders/OrderID/10248
+  auth: inherit
+  body:
+    mode: json
+    json: |-
+      {
+        "ShipName": "Steve Jones"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,22 @@
+info:
+  name: Add Shipper with Phone
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: http://localhost:5000/api/Shippers
+  auth: inherit
+  body:
+    mode: json
+    json: |-
+      {
+        "CompanyName": "Redgate Software",
+        "Phone": "303-333-3333"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

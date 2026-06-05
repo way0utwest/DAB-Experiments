@@ -1,0 +1,25 @@
+info:
+  name: Orders Complex Filter Sorted by Employee
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: http://localhost:5000/api/Orders?$filter=(ShipCountry eq 'France' and OrderID gt 11000) or CustomerID eq 'VINET'&$select=CustomerID,OrderID,ShipCountry,OrderDate&$orderby=EmployeeID
+  params:
+    - name: $filter
+      value: (ShipCountry eq 'France' and OrderID gt 11000) or CustomerID eq 'VINET'
+      type: query
+    - name: $select
+      value: CustomerID,OrderID,ShipCountry,OrderDate
+      type: query
+    - name: $orderby
+      value: EmployeeID
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
