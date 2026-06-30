@@ -1,0 +1,34 @@
+info:
+  name: Get Customers
+  type: graphql
+  seq: 1
+
+graphql:
+  method: POST
+  url: http://localhost:5000/graphql
+  body:
+    query: |-
+      query Customers {
+          customers {
+              items {
+                  CustomerID
+                  CompanyName
+                  ContactName
+                  ContactTitle
+                  Address
+                  City
+                  Region
+                  PostalCode
+                  Country
+                  Phone
+                  Fax
+              }
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
