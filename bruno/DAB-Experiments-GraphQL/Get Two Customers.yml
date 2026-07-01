@@ -7,21 +7,17 @@ graphql:
   method: POST
   url: http://localhost:5000/graphql
   body:
-    query: |-
-      query Customers {
-          customers {
+    query: |2-
+        query Customers {
+          customers(
+              filter: { or: [{CustomerID: { eq: "VINET" } }
+              { CustomerID: {eq: "BONAP"}}]}
+          ) {
+              endCursor
+              hasNextPage
               items {
                   CustomerID
                   CompanyName
-                  ContactName
-                  ContactTitle
-                  Address
-                  City
-                  Region
-                  PostalCode
-                  Country
-                  Phone
-                  Fax
               }
           }
       }

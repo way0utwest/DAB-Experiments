@@ -4,8 +4,25 @@ info:
   seq: 2
 
 graphql:
-  method: GET
-  url: ""
+  method: POST
+  url: http://localhost:5000/graphql
+  body:
+    query: |-
+      query Customers {
+          customers_by_pk(CustomerID: "VINET") {
+              CustomerID
+              CompanyName
+              ContactName
+              ContactTitle
+              Address
+              City
+              Region
+              PostalCode
+              Country
+              Phone
+              Fax
+          }
+      }
   auth: inherit
 
 settings:
