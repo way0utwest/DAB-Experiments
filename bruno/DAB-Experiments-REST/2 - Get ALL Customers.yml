@@ -1,5 +1,5 @@
 info:
-  name: Get ALL Customers
+  name: 2 - Get ALL Customers
   type: http
   seq: 2
 
