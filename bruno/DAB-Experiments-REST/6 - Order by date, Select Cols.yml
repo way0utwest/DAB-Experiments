@@ -1,0 +1,22 @@
+info:
+  name: 6 - Order by date, Select Cols
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: http://localhost:5000/api/Orders?$orderby=OrderDate&$select=OrderID,CustomerID,OrderDate
+  params:
+    - name: $orderby
+      value: OrderDate
+      type: query
+    - name: $select
+      value: OrderID,CustomerID,OrderDate
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

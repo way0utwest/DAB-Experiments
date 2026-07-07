@@ -1,0 +1,19 @@
+info:
+  name: 6 - Order by country contact
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: http://localhost:5000/api/Customers?$orderby=Country desc, ContactName
+  params:
+    - name: $orderby
+      value: Country desc, ContactName
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
