@@ -1,0 +1,19 @@
+info:
+  name: 5 - Order Results Contact
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: http://localhost:5000/api/Customers?$orderby=ContactName asc
+  params:
+    - name: $orderby
+      value: ContactName asc
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
