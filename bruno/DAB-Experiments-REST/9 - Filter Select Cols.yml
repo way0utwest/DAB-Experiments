@@ -1,7 +1,7 @@
 info:
-  name: 6 - Filter Select Cols
+  name: 9 - Filter Select Cols
   type: http
-  seq: 10
+  seq: 9
 
 http:
   method: GET

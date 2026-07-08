@@ -1,7 +1,7 @@
 info:
-  name: 4 - Get One Customer
+  name: 7 - Get One Customer
   type: http
-  seq: 3
+  seq: 7
 
 http:
   method: GET

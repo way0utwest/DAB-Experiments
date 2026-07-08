@@ -1,0 +1,35 @@
+info:
+  name: Change Customer Contact
+  type: graphql
+  seq: 10
+
+graphql:
+  method: POST
+  url: http://localhost:5000/graphql
+  body:
+    query: |-
+      mutation UpdateCustomers {
+          updateCustomers(CustomerID: "ANATR", item: { 
+              ContactName: "Prince"
+              }) 
+              {
+              CustomerID
+              CompanyName
+              ContactName
+              ContactTitle
+              Address
+              City
+              Region
+              PostalCode
+              Country
+              Phone
+              Fax
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

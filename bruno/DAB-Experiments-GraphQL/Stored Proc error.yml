@@ -1,0 +1,21 @@
+info:
+  name: Stored Proc error
+  type: graphql
+  seq: 14
+
+graphql:
+  method: POST
+  url: http://localhost:5000/graphql
+  body:
+    query: |-
+      query {
+        executeCustomerOrderHistory(CustomerID: "ANATR") {
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

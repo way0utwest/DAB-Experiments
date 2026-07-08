@@ -1,0 +1,31 @@
+info:
+  name: Change Two things
+  type: graphql
+  seq: 11
+
+graphql:
+  method: POST
+  url: http://localhost:5000/graphql
+  body:
+    query: |-
+      mutation UpdateCustomers {
+          updateCustomers(
+              CustomerID: "ANATR"
+              item: { ContactName: "John Mayer", ContactTitle: "Best Lead Guitar", City: "LA" }
+          ) {
+              CustomerID
+              CompanyName
+              ContactName
+              ContactTitle
+              Address
+              City
+              Region
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

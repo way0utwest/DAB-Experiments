@@ -1,0 +1,29 @@
+info:
+  name: Get All Except One
+  type: graphql
+  seq: 4
+
+graphql:
+  method: POST
+  url: http://localhost:5000/graphql
+  body:
+    query: |-
+      query Customers {
+          customers(
+              filter: { CustomerID: { neq: "VINET" } }
+          ) {
+              endCursor
+              hasNextPage
+              items {
+                  CustomerID
+                  CompanyName
+              }
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

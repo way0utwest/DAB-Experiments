@@ -1,7 +1,7 @@
 info:
-  name: 6 - date correct
+  name: 13 - date correct
   type: http
-  seq: 14
+  seq: 13
 
 http:
   method: GET

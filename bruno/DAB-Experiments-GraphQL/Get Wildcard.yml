@@ -1,0 +1,29 @@
+info:
+  name: Get Wildcard
+  type: graphql
+  seq: 5
+
+graphql:
+  method: POST
+  url: http://localhost:5000/graphql
+  body:
+    query: |-
+      query Customers {
+          customers(
+              filter: { CustomerID: { startsWith: "F" } }
+          ) {
+              endCursor
+              hasNextPage
+              items {
+                  CustomerID
+                  CompanyName
+              }
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

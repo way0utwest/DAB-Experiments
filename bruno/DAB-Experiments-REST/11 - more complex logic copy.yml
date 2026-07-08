@@ -1,7 +1,7 @@
 info:
-  name: 6 - more complex logic copy
+  name: 11 - more complex logic copy
   type: http
-  seq: 12
+  seq: 11
 
 http:
   method: GET

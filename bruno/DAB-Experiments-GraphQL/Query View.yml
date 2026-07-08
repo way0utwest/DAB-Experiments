@@ -1,0 +1,26 @@
+info:
+  name: Query View
+  type: graphql
+  seq: 8
+
+graphql:
+  method: POST
+  url: http://localhost:5000/graphql
+  body:
+    query: |-
+      query SalesSummaries {
+          salesSummaries {
+              items {
+                  ShippedDate
+                  OrderID
+                  Subtotal
+              }
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

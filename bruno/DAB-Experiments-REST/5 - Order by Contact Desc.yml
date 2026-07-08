@@ -1,14 +1,14 @@
 info:
-  name: 5 - Order by Contact
+  name: 5 - Order by Contact Desc
   type: http
   seq: 5
 
 http:
   method: GET
-  url: http://localhost:5000/api/Customers?$orderby=ContactName asc
+  url: http://localhost:5000/api/Customers?$orderby=ContactName desc
   params:
     - name: $orderby
-      value: ContactName asc
+      value: ContactName desc
       type: query
   auth: inherit
 

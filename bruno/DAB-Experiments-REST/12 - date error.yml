@@ -1,14 +1,14 @@
 info:
-  name: 3 - Get All Customers Ordered
+  name: 12 - date error
   type: http
-  seq: 3
+  seq: 12
 
 http:
   method: GET
-  url: http://localhost:5000/api/Customers?$orderby=ContactName asc
+  url: http://localhost:5000/api/Orders?$filter=OrderDate ge 1998-02-01
   params:
-    - name: $orderby
-      value: ContactName asc
+    - name: $filter
+      value: OrderDate ge 1998-02-01
       type: query
   auth: inherit
 

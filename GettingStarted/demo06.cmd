@@ -9,3 +9,5 @@ dab add Shippers -c "dab-northwind.json" --source dbo.Shippers --permissions "an
 @echo "-----------------------------------------"
 @echo "Start the API with dab start dab-northwind.json"   
 @echo "-----------------------------------------"
+pause
+dab start --config dab-northwind.json

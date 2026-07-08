@@ -1,7 +1,7 @@
 info:
-  name: 6 - Order by date, Select Cols
+  name: 8 - Order by date, Select Cols
   type: http
-  seq: 9
+  seq: 8
 
 http:
   method: GET

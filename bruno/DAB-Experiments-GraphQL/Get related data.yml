@@ -1,0 +1,33 @@
+info:
+  name: Get related data
+  type: graphql
+  seq: 6
+
+graphql:
+  method: POST
+  url: http://localhost:5000/graphql
+  body:
+    query: |-
+      query Customers {
+          customers(filter: { CustomerID: { eq: "VINET" } }) {
+              endCursor
+              hasNextPage
+              items {
+                  CustomerID
+                  CompanyName
+                  Orders {
+                      items {
+                          OrderID
+                          OrderDate
+                      }
+                  }
+              }
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
