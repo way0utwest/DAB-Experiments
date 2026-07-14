@@ -1,7 +1,7 @@
 info:
-  name: Get All Except One
+  name: Get Wildcard Next Page of 3
   type: graphql
-  seq: 5
+  seq: 8
 
 graphql:
   method: POST
@@ -9,8 +9,8 @@ graphql:
   body:
     query: |-
       query Customers {
-          customers(
-              filter: { CustomerID: { neq: "VINET" } }
+          customers( first:5 after:"W3siRW50aXR5TmFtZSI6IkN1c3RvbWVycyIsIkZpZWxkTmFtZSI6IkN1c3RvbWVySUQiLCJGaWVsZFZhbHVlIjoiRk9MSUciLCJEaXJlY3Rpb24iOjB9XQ=="
+              filter: { CustomerID: { startsWith: "F" } }
           ) {
               endCursor
               hasNextPage
@@ -18,6 +18,8 @@ graphql:
                   CustomerID
                   CompanyName
               }
+             hasNextPage
+          endCursor
           }
       }
   auth: inherit

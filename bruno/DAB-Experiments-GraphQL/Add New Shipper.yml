@@ -1,7 +1,7 @@
 info:
   name: Add New Shipper
   type: graphql
-  seq: 9
+  seq: 12
 
 graphql:
   method: POST

@@ -1,11 +1,11 @@
 info:
-  name: 14 - Query View
+  name: 7a - Get One Customer copy 2
   type: http
-  seq: 17
+  seq: 10
 
 http:
   method: GET
-  url: http://localhost:5000/api/SalesSummary
+  url: http://localhost:5000/api/Customers/CustomerID/ALFKI
   auth: inherit
 
 settings:

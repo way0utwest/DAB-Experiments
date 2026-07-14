@@ -1,16 +1,18 @@
 info:
-  name: Get All Except One
+  name: Get Three Customers
   type: graphql
-  seq: 5
+  seq: 4
 
 graphql:
   method: POST
   url: http://localhost:5000/graphql
   body:
-    query: |-
-      query Customers {
+    query: |2-
+        query Customers {
           customers(
-              filter: { CustomerID: { neq: "VINET" } }
+              filter: { or: [{CustomerID: { eq: "VINET" } }
+              { CustomerID: {eq: "BONAP"}}
+              { CustomerID: {eq: "TOMSP"}}]}
           ) {
               endCursor
               hasNextPage

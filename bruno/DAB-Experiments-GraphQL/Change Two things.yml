@@ -1,7 +1,7 @@
 info:
   name: Change Two things
   type: graphql
-  seq: 11
+  seq: 14
 
 graphql:
   method: POST

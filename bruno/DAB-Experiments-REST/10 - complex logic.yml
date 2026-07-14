@@ -1,14 +1,14 @@
 info:
   name: 10 - complex logic
   type: http
-  seq: 10
+  seq: 13
 
 http:
   method: GET
-  url: http://localhost:5000/api/Orders?$filter=(ShipCountry eq 'France' and OrderID gt 11000) or CustomerID eq 'VINET'&$select=CustomerID,OrderID,ShipCountry,OrderDate
+  url: http://localhost:5000/api/Orders?$filter=(ShipCountry eq 'France' and OrderID gt 11000) or CustomerID eq 'TOMSP'&$select=CustomerID,OrderID,ShipCountry,OrderDate
   params:
     - name: $filter
-      value: (ShipCountry eq 'France' and OrderID gt 11000) or CustomerID eq 'VINET'
+      value: (ShipCountry eq 'France' and OrderID gt 11000) or CustomerID eq 'TOMSP'
       type: query
     - name: $select
       value: CustomerID,OrderID,ShipCountry,OrderDate

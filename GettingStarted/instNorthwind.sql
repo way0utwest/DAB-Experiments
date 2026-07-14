@@ -527,6 +527,36 @@ FROM Orders INNER JOIN "Order Subtotals" ON Orders.OrderID = "Order Subtotals".O
 WHERE Orders.ShippedDate Between @Beginning_Date And @Ending_Date
 GO
 
+CREATE OR ALTER PROCEDURE [dbo].[CustOrderHist] @CustomerID nvarchar(5)
+AS
+SELECT ProductName, Total=SUM(Quantity)
+FROM Products P, [Order Details] OD, Orders O, Customers C
+WHERE C.CustomerID = @CustomerID
+AND C.CustomerID = O.CustomerID AND O.OrderID = OD.OrderID AND OD.ProductID = P.ProductID
+GROUP BY ProductName
+GO
+CREATE OR ALTER PROCEDURE [dbo].[CustOrdersDetail] @OrderID int
+AS
+SELECT ProductName,
+    UnitPrice=ROUND(Od.UnitPrice, 2),
+    Quantity,
+    Discount=CONVERT(int, Discount * 100), 
+    ExtendedPrice=ROUND(CONVERT(money, Quantity * (1 - Discount) * Od.UnitPrice), 2)
+FROM Products P, [Order Details] Od
+WHERE Od.ProductID = P.ProductID and Od.OrderID = @OrderID
+
+GO
+CREATE OR ALTER PROCEDURE [dbo].[CustOrdersOrders] @CustomerID nvarchar(5)
+AS
+SELECT OrderID, 
+	OrderDate,
+	RequiredDate,
+	ShippedDate
+FROM Orders
+WHERE CustomerID = @CustomerID
+ORDER BY OrderID
+GO
+
 set quoted_identifier on
 go
 set identity_insert "Categories" on

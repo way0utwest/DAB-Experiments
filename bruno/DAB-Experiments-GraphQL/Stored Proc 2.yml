@@ -1,7 +1,7 @@
 info:
   name: Stored Proc 2
   type: graphql
-  seq: 15
+  seq: 18
 
 graphql:
   method: POST

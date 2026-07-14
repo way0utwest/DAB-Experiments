@@ -1,7 +1,7 @@
 info:
   name: 15 - Query View copy filter
   type: http
-  seq: 15
+  seq: 18
 
 http:
   method: GET

@@ -1,7 +1,7 @@
 info:
   name: Change Customer Contact
   type: graphql
-  seq: 10
+  seq: 13
 
 graphql:
   method: POST

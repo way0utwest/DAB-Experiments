@@ -1,14 +1,14 @@
 info:
-  name: 12 - date error
+  name: 3 - Get page first 3 Customers
   type: http
-  seq: 15
+  seq: 4
 
 http:
   method: GET
-  url: http://localhost:5000/api/Orders?$filter=OrderDate ge 1998-02-01
+  url: http://localhost:5000/api/Customers?$first=3
   params:
-    - name: $filter
-      value: OrderDate ge 1998-02-01
+    - name: $first
+      value: "3"
       type: query
   auth: inherit
 

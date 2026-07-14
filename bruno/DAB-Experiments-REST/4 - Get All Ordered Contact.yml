@@ -1,7 +1,7 @@
 info:
   name: 4 - Get All Ordered Contact
   type: http
-  seq: 4
+  seq: 6
 
 http:
   method: GET

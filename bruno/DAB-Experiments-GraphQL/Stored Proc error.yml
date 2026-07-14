@@ -1,7 +1,7 @@
 info:
   name: Stored Proc error
   type: graphql
-  seq: 14
+  seq: 17
 
 graphql:
   method: POST
