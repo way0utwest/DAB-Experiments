@@ -5,10 +5,13 @@ info:
 
 http:
   method: GET
-  url: http://localhost:5000/api/Customers?$first=3
+  url: http://localhost:5000/api/Customers?$first=3&$after=W3siRW50aXR5TmFtZSI6IkN1c3RvbWVycyIsIkZpZWxkTmFtZSI6IkN1c3RvbWVySUQiLCJGaWVsZFZhbHVlIjoiQU5UT04iLCJEaXJlY3Rpb24iOjB9XQ==
   params:
     - name: $first
       value: "3"
+      type: query
+    - name: $after
+      value: W3siRW50aXR5TmFtZSI6IkN1c3RvbWVycyIsIkZpZWxkTmFtZSI6IkN1c3RvbWVySUQiLCJGaWVsZFZhbHVlIjoiQU5UT04iLCJEaXJlY3Rpb24iOjB9XQ==
       type: query
   auth: inherit
 

@@ -9,7 +9,7 @@ graphql:
   body:
     query: |-
       mutation DeleteShippers {
-          deleteShippers(ShipperID: 7) {
+          deleteShippers(ShipperID: 1004) {
               ShipperID
               CompanyName
               Phone

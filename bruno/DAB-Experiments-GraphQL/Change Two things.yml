@@ -17,9 +17,7 @@ graphql:
               CompanyName
               ContactName
               ContactTitle
-              Address
               City
-              Region
           }
       }
   auth: inherit
